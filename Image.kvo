@@ -1,0 +1,38 @@
+widget {
+    meta {
+        name: "Image"
+        id: "image"
+    }
+    onRender() {
+    	import QtQuick
+    	import Quickshell.Widgets
+    	import qs.ui.controls.primitives
+    	import QtQuick.Layouts
+		import QtQuick.Controls
+    	import qs.ui.controls.providers
+    	import qs.ui.controls.auxiliary.widget
+    	import qs.config
+    	import qs
+    	WidgetItem {
+	        id: root
+	
+	        ClippingRectangle {
+				anchors.fill: parent
+				anchors.margins: 4
+				radius: 22
+				color: "transparent"
+				CFI {
+					id: bg
+					anchors.fill: parent
+					colorized: false
+					fillMode: root.options?.fill || true ? Image.PreserveAspectCrop : Image.PreserveAspectFit
+					source: root.options?.source || ""
+				}
+	        }
+	    }
+    }
+
+    onPlacement(data) {
+        data.allow()
+    }
+}

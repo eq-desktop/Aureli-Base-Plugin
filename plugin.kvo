@@ -1,0 +1,18 @@
+plugin "aureli-base" {
+
+    meta {
+        name: "Base Aureli System"
+        version: "0.1.0"
+        api: "Elephant-1"
+        description: "This is the Base plugin for all Aureli Widgets"
+        author: "Eq Desktop"
+    }
+
+    @import "DayCalendar.kvo"
+    @import "BatterySlots.kvo"
+    @import "DigitalClock.kvo"
+    @import "Calendar.kvo"
+    @import "Image.kvo"
+    @import "Weather.kvo"
+    @import "Events.kvo"
+}
