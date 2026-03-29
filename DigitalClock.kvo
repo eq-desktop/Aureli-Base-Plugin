@@ -51,7 +51,7 @@ widget {
                         required property int modelData
                         width: pathView.width / 60
                         height: pathView.width / 20
-                        color: "white"
+                        color: Config.general.darkMode ? "white" : "#222"
                         radius: 15
                         antialiasing: true
                         rotation: modelData * 360 / pathView.model

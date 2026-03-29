@@ -1,6 +1,7 @@
 widget {
     meta {
         name: "Battery Slots"
+        preferredSize: "4x2"
         id: "battery-slots"
     }
     onRender() {
