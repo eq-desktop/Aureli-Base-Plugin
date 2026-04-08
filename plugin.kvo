@@ -15,4 +15,5 @@ plugin "aureli-base" {
     @import "Image.kvo"
     @import "Weather.kvo"
     @import "Events.kvo"
+    @import "Quote.kvo"
 }

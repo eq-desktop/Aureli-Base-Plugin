@@ -3,6 +3,9 @@ widget {
         name: "Events"
         id: "events"
     }
+	config {
+		(string)event:;
+	}
     onRender() {
     	import QtQuick
     	import Quickshell.Widgets
@@ -49,7 +52,7 @@ widget {
 					id: events
 					color: Config.general.darkMode ? "#aaa" : "#555"
 					font.pixelSize: bw.textSize
-					text: Translation.tr("No events today")
+					text: wi.getOption("event", Translation.tr("No events today"))
 					font.weight: 300
 					anchors.bottom: parent.bottom
 					anchors.left: parent.left

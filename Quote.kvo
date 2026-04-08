@@ -1,11 +1,12 @@
 widget {
     meta {
-        name: "Image"
-        id: "image"
+        name: "Quote"
+        preferredSize: "4x2"
+        id: "quote"
     }
 	config {
-		(bool)fill:;
-		(string)source:;
+		(string)quote:;
+		(int)size: 24
 	}
     onRender() {
     	import QtQuick
@@ -20,19 +21,17 @@ widget {
     	WidgetItem {
 	        id: root
 	
-	        ClippingRectangle {
+	        CFText {
+				id: quote
 				anchors.fill: parent
-				anchors.margins: -9
-				radius: 22
-				color: "transparent"
-				CFI {
-					id: bg
-					anchors.fill: parent
-					colorized: false
-					fillMode: root.getOption("fill", true) ? Image.PreserveAspectCrop : Image.PreserveAspectFit
-					source: root.getOption("source", "")
-				}
-	        }
+				anchors.margins: 15
+				verticalAlignment: Text.AlignVCenter
+				horizontalAlignment: Text.AlignHCenter
+				font.weight: 600
+				font.pixelSize: root.getOption("size", 24)
+				wrapMode: Text.WordWrap
+				text: root.getOption("quote", "Reinventing the wheel")
+			}
 	    }
     }
 
